@@ -2,20 +2,10 @@
 
 namespace CodeOrganization
 {
-    public static class RazorViewEngineHelper
+    public class FeaturesFolderViewEngine : RazorViewEngine
     {
-        public static void Configure()
+        public FeaturesFolderViewEngine()
         {
-            var engine = new RazorViewEngine();
-            ViewEngines.Engines.Clear();
-            ViewEngines.Engines.Add(engine);
-            AddFeaturesFolder();
-        }
-
-        private static void AddFeaturesFolder()
-        {
-            var engine = (RazorViewEngine)ViewEngines.Engines[0];
-
             // Cómo hago yo ASP.NET MVC
             // https://channel9.msdn.com/Events/Developers-Spain-Events/dotNetSpain-Conference/Como-hago-yo-ASPNET-MVC
 
@@ -33,25 +23,27 @@ namespace CodeOrganization
             {
                 "~/Views/{1}/{0}.cshtml",
                 "~/Views/Shared/{0}.cshtml",
+                "~/Features/{1}/{0}.cshtml",
                 "~/Features/{1}/Views/{0}.cshtml",
                 "~/Features/Views/Shared/{0}.cshtml"
             };
 
-            engine.MasterLocationFormats = locationFormats;
-            engine.ViewLocationFormats = locationFormats;
-            engine.PartialViewLocationFormats = locationFormats;
+            MasterLocationFormats = locationFormats;
+            ViewLocationFormats = locationFormats;
+            PartialViewLocationFormats = locationFormats;
 
             var areaLocationFormats = new[]
             {
                 "~/Areas/{2}/Views/{1}/{0}.cshtml",
                 "~/Areas/{2}/Views/Shared/{0}.cshtml",
+                "~/Areas/{2}/Features/{1}/{0}.cshtml",
                 "~/Areas/{2}/Features/{1}/Views/{0}.cshtml",
                 "~/Areas/{2}/Features/Views/Shared/{0}.cshtml"  
             };
 
-            engine.AreaMasterLocationFormats = areaLocationFormats;
-            engine.AreaViewLocationFormats = areaLocationFormats;
-            engine.AreaPartialViewLocationFormats = areaLocationFormats;
+            AreaMasterLocationFormats = areaLocationFormats;
+            AreaViewLocationFormats = areaLocationFormats;
+            AreaPartialViewLocationFormats = areaLocationFormats;
         }
     }
 }

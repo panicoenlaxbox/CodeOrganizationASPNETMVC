@@ -7,6 +7,7 @@ namespace CodeOrganization.Features.AwesomeFeature
         // GET: AwesomeFeature
         public ActionResult Index()
         {
+            ViewBag.Title = "Awesome feature";
             return View();
         }
     }

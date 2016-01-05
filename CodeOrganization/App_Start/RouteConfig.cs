@@ -19,7 +19,7 @@ namespace CodeOrganization
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional, },
                 namespaces: new[]
                 {
-                    "CodeOrganization.Controllers", 
+                    "CodeOrganization.Controllers.*", 
                     "CodeOrganization.Features.*"
                 }
             );

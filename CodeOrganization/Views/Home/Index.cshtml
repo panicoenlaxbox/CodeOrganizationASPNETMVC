@@ -1,4 +1,6 @@
-﻿<h1>Views\Home\Index.cshtml</h1>
+﻿<h1>Home</h1>
+<h2>@ViewBag.Title</h2>
 @Html.ActionLink("Awesome feature", "Index", "AwesomeFeature")
-@Html.ActionLink("Users (area)", "Index", "Users", new { Area = "Admin" }, null)
-@Html.ActionLink("Home (area)", "Index", "Home", new { Area = "Admin" }, null)
+@Html.ActionLink("Users feature (area)", "Index", "Users", new { Area = "Admin" }, null)
+@Html.ActionLink("Home feature (area)", "Index", "Home", new { Area = "Admin" }, null)
+@Html.ActionLink("Orders (area)", "Index", "Orders", new { Area = "Admin" }, null)

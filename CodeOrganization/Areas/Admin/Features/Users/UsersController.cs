@@ -7,6 +7,7 @@ namespace CodeOrganization.Areas.Admin.Features.Users
         // GET: Users
         public ActionResult Index()
         {
+            ViewBag.Title = "Users feature (area)";            
             return View();
         }
     }
